@@ -82,6 +82,10 @@ export const useMessages = () => {
                 uid: uid,
                 displayName: displayName,
             });
+        }else{
+            alert('you need to be logged-in to perform this action');
+            localStorage.removeItem('token');
+            router.push('/login');
         }
     }
 
@@ -97,6 +101,10 @@ export const useMessages = () => {
                 displayName: displayName,
                 photoURL: photoURL
             });
+        }else{
+            alert('you need to be logged-in to perform this action');
+            localStorage.removeItem('token');
+            router.push('/login');
         }
     }
     return { messages, addMessage, addAssignmentMessage };
@@ -113,6 +121,10 @@ export const useStorage = () => {
             const url = await getDownloadURL(storageRef);
             const metadata = await getMetadata(storageRef);
             return{url, metadata};
+        }else{
+            alert('you need to be logged-in to perform this action');
+            localStorage.removeItem('token');
+            router.push('/login');
         }
     }
     return { addFile };

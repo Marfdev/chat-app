@@ -4,7 +4,7 @@
     <h1 class="text-2xl text-white font-bold">Subir Evaluacion</h1>
     <form @submit.prevent="handleSubmit">
       <input type="file" class="max-w-xl mx-auto bg-white rounded p1" @change="handleFiles">
-      <button class="rounded bg-sky-500 p-1 mr-2 text-white font-bold" type="submit"> Publicar </button>
+      <button class="rounded bg-sky-500 p-1 mr-2 text-white font-bold file-submit" type="submit"> Publicar </button>
     </form>
     
   </div>

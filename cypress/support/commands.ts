@@ -36,4 +36,24 @@
 //   }
 // }
 
-export {}
+import firebase from 'firebase/compat/app';
+import 'firebase/compat/auth';
+import 'firebase/compat/database';
+import 'firebase/compat/firestore';
+import 'firebase/compat/storage';
+import { attachCustomCommands } from 'cypress-firebase';
+
+const fbConfig = {
+    apiKey: "AIzaSyCWk-1yDi9d4N0GI8AcH9BQLgupIHgAqlo",
+    authDomain: "chat-test-f395e.firebaseapp.com",
+    projectId: "chat-test-f395e",
+    storageBucket: "chat-test-f395e.appspot.com",
+    messagingSenderId: "138233771546",
+    appId: "1:138233771546:web:763c88dc609ffeeba543a3",
+    measurementId: "G-VEB330N5VZ"
+};
+
+firebase.initializeApp(fbConfig);
+
+attachCustomCommands({ Cypress, cy, firebase });
+
